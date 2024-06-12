@@ -1,26 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <script
+      src="https://kit.fontawesome.com/afbae0cb27.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body
+    class="flex items-center justify-center flex-col min-h-screen bg-gradient-to-b from-indigo-900 to-blue-900"
+  >
+    <div class="wrapper mx-auto shadow-md p-8">
+      <header>
+        <nav class="flex items-center justify-between">
+          <h1
+            class="logo text-slate-50 uppercase text-xl font-bold tracking-widest"
+          >
+            Todo
+          </h1>
+          <img src="./images/icon-sun.svg" alt="" />
+        </nav>
+      </header>
 
-  Todo
+      <main>
+        <form action="" class="flex items-center mt-8 mb-5">
+          <div class="w-full">
+            <label for="hs-trailing-button-add-on" class="sr-only">Label</label>
+            <div class="flex rounded-lg shadow-sm">
+              <input
+                placeholder="Create a new todo..."
+                type="text"
+                id="hs-trailing-button-add-on"
+                name="hs-trailing-button-add-on"
+                class="py-3 px-4 block w-full bg-slate-600 text-slate-200 border-gray-200 shadow-sm rounded-s-lg text-sm outline-none border-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              />
+              <button
+                type="submit"
+                class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md border border-transparent outline-none text-slate-400 bg-slate-800 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </form>
+        <section class="todo-list">
+          <ul
+            class="bg-slate-800 text-slate-400 cursor-pointer rounded-md last:border-b-0"
+          >
+            <li class="p-4 border-slate-500 border-b flex items-center">
+              <i
+                class="fa-solid fa-circle-check fa-lg mr-2"
+                style="color: #b197fc"
+              ></i>
+              <span>hello world</span>
+              <i
+                class="fa-solid fa-xmark fa-lg ml-auto"
+                style="color: #b197fc"
+              ></i>
+            </li>
+            <li class="p-4 border-slate-500 border-b flex items-center">
+              <i
+                class="fa-solid fa-circle-check fa-lg mr-2"
+                style="color: #b197fc"
+              ></i>
+              <span>hello world</span>
+              <i
+                class="fa-solid fa-xmark fa-lg ml-auto"
+                style="color: #b197fc"
+              ></i>
+            </li>
+            <li class="p-4 border-slate-500 border-b flex items-center">
+              <i
+                class="fa-solid fa-circle-check fa-lg mr-2"
+                style="color: #b197fc"
+              ></i>
+              <span>hello world</span>
+              <i
+                class="fa-solid fa-xmark fa-lg ml-auto"
+                style="color: #b197fc"
+              ></i>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer
+        class="grid grid-cols-2 grid-rows-2 bg-slate-800 text-slate-400 p-4 rounded-b-md"
+      >
+        <p><span class="mr-2">0</span>items left</p>
 
-  <!-- Add dynamic number --> items left
+        <ul class="flex items-center justify-center row-start-2 col-span-full">
+          <li class="cursor-pointer hover:text-purple-300">All</li>
+          <li class="mx-3 cursor-pointer hover:text-purple-300">Active</li>
+          <li class="cursor-pointer hover:text-purple-300">Completed</li>
+        </ul>
+        <p class="row-start-1 col-start-2 cursor-pointer hover:text-purple-300">
+          Clear Completed
+        </p>
+      </footer>
 
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-</body>
+      <!-- Drag and drop to reorder list -->
+    </div>
+  </body>
 </html>
