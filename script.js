@@ -66,5 +66,44 @@ formEl.addEventListener("submit", (e) => {
 });
 
 function saveListEl() {
-  localStorage.setItem("task", todoListEl.innerHTML)
+  localStorage.setItem("task", todoListEl.innerHTML);
 }
+
+const completedTasks = document.querySelector(".completed");
+const allTasks = document.querySelector(".all");
+const clearCompletedTasks = document.querySelector(".clear-completed");
+
+completedTasks.addEventListener("click", () => {
+  todoListEl.querySelectorAll("span").forEach((span) => {
+    console.log("hello");
+    if (!span.classList.contains("line-through")) {
+      span.parentElement.classList.add("hidden");
+    }
+  });
+  saveListEl();
+});
+
+allTasks.addEventListener("click", () => {
+  todoListEl.querySelectorAll("li").forEach((li) => {
+    li.classList.remove("hidden");
+  });
+  saveListEl();
+});
+
+clearCompletedTasks.addEventListener("click", () => {
+  todoListEl.querySelectorAll("span").forEach((span) => {
+    if (span.classList.contains("line-through")) {
+      span.parentElement.remove();
+    }
+  });
+  saveListEl();
+});
+
+console.log(todoListEl.querySelectorAll("li").length);
+
+const remainingTasksEl = document.querySelector(".remaining-tasks");
+function displayNumberofTasks() {
+  remainingTasksEl.textContent = todoListEl.querySelectorAll("li").length;
+  saveListEl();
+}
+displayNumberofTasks();
