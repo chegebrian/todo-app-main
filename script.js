@@ -103,7 +103,9 @@ console.log(todoListEl.querySelectorAll("li").length);
 
 const remainingTasksEl = document.querySelector(".remaining-tasks");
 function displayNumberofTasks() {
-  remainingTasksEl.textContent = todoListEl.querySelectorAll("li").length;
+  setInterval(() => {
+    remainingTasksEl.textContent = todoListEl.querySelectorAll("li").length;
+  }, 1000);
   saveListEl();
 }
 displayNumberofTasks();
